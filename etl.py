@@ -9,13 +9,8 @@ from pyspark.sql.types import TimestampType, DateType
 config = configparser.ConfigParser()
 config.read(os.path.expanduser("~/.aws/credentials"))
 
-# config.read('dl.cfg')
-# os.environ['AWS_ACCESS_KEY_ID']=config['AWS_ACCESS_KEY_ID']
-# os.environ['AWS_SECRET_ACCESS_KEY']=config['AWS_SECRET_ACCESS_KEY']
-
 os.environ['AWS_ACCESS_KEY_ID']=config['AWS']['aws_access_key_id']
 os.environ['AWS_SECRET_ACCESS_KEY']=config['AWS']['aws_secret_access_key']
-
 
 def create_spark_session():
     '''
