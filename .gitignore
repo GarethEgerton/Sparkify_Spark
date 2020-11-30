@@ -1,0 +1,7 @@
+*.cfg
+/data
+/.vscode
+/__pycache__
+/.virtual_documents
+/.ipynb_checkpoints
+Spark_notes.ipynb
