@@ -87,7 +87,8 @@ def process_log_data(spark, input_data, output_data):
                                 'weekday(timestamp) as weekday').distinct()
     
     # write time table to parquet files partitioned by year and month
-    time_table.write.mode('overwrite') \
+    time_table.write.partitionBy('year', 'month') \
+                    .mode('overwrite') \
                     .parquet(output_data + '/time/time_table.parquet')
 
     # read in song data to use for songplays table
